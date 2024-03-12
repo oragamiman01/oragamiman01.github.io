@@ -740,6 +740,17 @@ a:hover {
 
 .service-box .s-description {
   color: #4e4e4e;
+  display: table-row;
+}
+
+.service-box .description-text {
+  padding-right: 1.3rem;
+}
+
+.service-box .description-img{
+  width:40%;
+  margin: auto;
+  padding: 10px;
 }
 
 /*======================================
@@ -822,6 +833,8 @@ a:hover {
 .w-title {
   font-size: 1.2rem;
 }
+
+
 
 /*======================================
 //--//-->   TESTIMONIALS
