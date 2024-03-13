@@ -743,13 +743,15 @@ a:hover {
   display: table-row;
 }
 
-.service-box .description-text {
-  padding-right: 1.3rem;
+
+.service-box .description-imgs{
+  display: table;
+  width: 60%;
+  margin: auto;
 }
 
 .service-box .description-img{
-  width:40%;
-  margin: auto;
+  display: table-cell;
   padding: 10px;
 }
 

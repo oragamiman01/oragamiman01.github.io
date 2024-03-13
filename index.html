@@ -96,7 +96,7 @@
                     </h5>
                   </div>
                   <p class="lead">
-                    Hello! I am Preston Gonzales, an electrical engineer graduated from Johns Hopkins in 2023 and 2024 for bachelor’s and master’s, respectively. I have a wide range of experience from hardware to software engineering. On this website, you will be able to see what interests me and some of the projects I have done in and out of school. Feel free to reach out for more info at <a href=mailto:gonzalespreston01@gmail.com target="_blank">gonzalespreston01@gmail.com</a>!
+                    Hello! I am Preston Gonzales, an electrical engineer graduated from Johns Hopkins in 2023 and 2024 for my bachelor’s and master’s degrees, respectively. I have a wide range of experience from hardware engineering to deep learning. On this website, you will be able to see what interests me and some of the projects I have worked on in and out of school. Feel free to reach out for more info at <a href=mailto:gonzalespreston01@gmail.com target="_blank">gonzalespreston01@gmail.com</a>!
                   </p>
                   <div class="title-box-2">
                     <h5 class="title-left">
@@ -149,26 +149,21 @@
               <p class="text-center"><i>CraniUS Hardware Engineering Internship</i></p>
               <p class="s-description">
                 <div class="description-text">
-                This project is something I made during my first internship at CraniUS LLC, a company that is making an implantable device to better target brain cancer. A proprietary connector is used to program the device, so this interface board serves as an adapter to the USB debug probe. Making an adapter PCB also allowed us to include some helpful features for debugging and testing, including a heartbeat signal LED, 5V to 3.3V regulator, a slide-switch to connect the device to the regulated voltage, a hard reset button, and some headers for voltage and current measurement. I made this PCB in Altium, ordered it through OSH Park, and assembled it using a hot plate and soldering iron.<br><br>
-                I enjoyed working on this project because it was one of the first PCBs I made and I was very pleased with how well it turned out, especially how useful the added features have turned out to be. It gave me a good intro to designing a circuit based off of an IC and laying out the PCB in a way that is easy to use and provides useful information.<br>
-              </div>
-              <div class="description-img">
-                <img width="100%" src="img/prog_interface1.png" alt="programming interface PCB">
-              </div>
-              </p>
-            </div>
-          </div>
-        <!-- </div> -->
-        <!-- <div class="col-md-4"> -->
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="fa fa-microphone" aria-hidden="true"></i></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Speech enhancement</h2>
-              <p class="text-center"><i>Class project (2022)</i></p>
-              <p class="s-description">
-                This project was for an audio signal processing class. To enhance speech, we used spectral subtraction, one of the first noise suppression algorithms. It consists of estimating the average noise signal and removing noise by subtracting the average noise spectrum from the main signal’s spectrum, resulting in a restored version of the original audio. One of the side effects of this noise suppression algorithm is the generation of musical noise which is formed because the noise spectrum generally changes during speech.
+                  This project is something I made during my first internship at CraniUS LLC, a company that is making an implantable device to better target brain cancer. A proprietary connector is used to program the device, so this interface board serves as an adapter to the USB debug probe. Making an adapter PCB also allowed us to include some helpful features for debugging and testing, including a heartbeat signal LED, 5V to 3.3V regulator, a slide-switch to connect the device to the regulated voltage, a hard reset button, and some headers for voltage and current measurement. I made this PCB in Altium, ordered it through OSH Park, and assembled it using a hot plate and soldering iron.<br><br>
+                </div>
+                <div class="description-imgs">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/prog_interface2.png" alt="programming interface PCB">
+                    </div>
+                    <div class="description-img">
+                      <img width="100%" src="img/prog_interface1.png" alt="programming interface PCB">
+                    </div>
+                  </div>
+                </div>
+                <div class="description-text">
+                  <br>I enjoyed working on this project because it was one of the first PCBs I made and I was very pleased with how well it turned out, especially how useful the added features have turned out to be. It gave me a good intro to designing a circuit using an IC and laying out the PCB in a way that is easy to use and provides useful debugging information.
+                </div>
               </p>
             </div>
           </div>
@@ -180,9 +175,31 @@
             </div>
             <div class="service-content">
               <h2 class="s-title">Synchronized singing boxes</h2>
-              <p class="text-center"><i>Class project (2023)</i></p>
+              <p class="text-center"><i>Senior Design and Graduate Independent Study Project</i></p>
               <p class="s-description">
-                Created an algorithm to autonomously coordinate and synchronously play separate parts of a song. Check it out <a href="https://www.youtube.com/watch?v=3C2i4HhF9nc" target="blank">here</a>! My partner and I implemented this using Arduino Unos. We ran into hardware limitations but created a simple demonstration to show the capabilities of the algorithm. In spring 2024, I am continuing this project by moving it to a new platform to refine the algorithm and create a more powerful demonstration.
+                <div class="description-text">
+                  This is a project that I first got involved with in my senior year. The main idea around the project is to create a sort of swarm protocol that allows for an undetermined number of devices to wake up and self-coordinate to perform individual actions unique to each device. In this case, the goal of the project was to create singing boxes that would each play a different part of the song to create a chorus effect. The project had been started by a previous group of students, but they had only achieved basic radio communication between two devices with predetermined states. I worked on this project by myself during Fall 2022 and with a partner in Spring 2023. Currently, I am leading a team of two undergraduate students to continue working on the project. Over the 2023-24 academic year, we were able to implement the protocol we created on Arduino Unos. See <a href="https://www.youtube.com/watch?v=3C2i4HhF9nc" target="blank">here</a> for a basic video of the demonstration and below for the project poster from Spring 2023.<br><br>
+                </div>
+                <div class="description-imgs" style="width: 80%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/poster.png" alt="programming interface PCB">
+                    </div>
+                  </div>
+                </div>
+                <div class="description-text">
+                  <br>The protocol we designed for the demonstration uses hard-coded tracks to play for each device since we had little figurines with their respective instruments next to each device. However, the protocol also allows for devices to perform different actions if necessary, and they are aware of what actions other devices are performing to avoid performing the same action as another device. Additionally, the protocol can handle devices that die or come online while the network is active, making it well-suited for applications where devices may be activated or deactivated frequently.<br><br>
+                </div>
+                <div class="description-imgs" style="width: 40%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/design_day.png" alt="programming interface PCB">
+                    </div>
+                  </div>
+                </div>
+                <div class="description-text">
+                  <br>In the video, you may notice that it takes several seconds for the devices to get started. This is a weakness that we are aiming to solve during the Spring 2024 semester by moving the protocol over to Raspberry Pis, which are much more powerful and allow us to utilize better hardware. Additionally, we are aiming to generalize the protocol further to expand the scope of the project and potential applications. This project has a provisional patent application filed and we are hoping to prove it has meaningful innovation to bolster the application.
+                </div>
               </p>
             </div>
           </div>
@@ -197,7 +214,43 @@
               <h2 class="s-title">Computer vision guitar transcription</h2>
               <p class="text-center"><i>Class project (2023)</i></p>
               <p class="s-description">
-                In this project, my group and I utilized different techniques to transcript guitar fingering positions from a video of a guitar player. My group considered two main approaches to this problem. The first of which is a deep learning CNN-based method using labeled frames as training data. The second method is a more traditional computer vision approach, breaking up the process into smaller steps. My main contributions to the project were the frame auto labeling pipeline and fretboard segmentation areas.
+                In this project, my group and I utilized different techniques to transcript guitar fingering positions from a video of a guitar player. My group considered two main approaches to this problem. The first of which is a deep learning CNN-based method using labeled frames as training data. The second method is a more traditional computer vision approach, breaking up the process into smaller steps: segmentation of the fretboard, centering/tracking of the fretboard, string and fret location estimation, and finger position extraction. My main contributions to the project were the frame auto labeling pipeline for the deep CNN approach,  fretboard segmentation, and fret position calculation for the traditional approach.<br><br>
+              </p>
+              <div class="description-imgs" style="width: 50%;">
+                <div style="display: table-row">
+                  <div class="description-img">
+                    <img width="100%" src="img/guitar1.png" alt="programming interface PCB">
+                  </div>
+                </div>
+              </div>
+              <p class="s-description">
+                <br>
+                The frame auto labeling pipeline is used in the deep learning approach so we did not have to manually label the note being played in each frame. This approach is limiting because it introduces some inaccuracy into our training data and it doesn’t allow for distinction between a D played on the 5th fret of the E string, or an open D string. However, the main advantage of this pipeline is that it allowed us to train using many more images than we would have been able to use by hand-labeling. I used my signal processing knowledge to adapt an existing project using the Harmonic Product Spectrum (HPS) as a polyphonic note detector to suit our needs. For a quick explanation, HPS uses scaled versions of the Fourier transform to find the fundamental frequency of a note that is being played. See the image below for a visual representation (<a href="http://musicweb.ucsd.edu/~trsmyth/analysis/Harmonic_Product_Spectrum.html" target="_blank">credit</a>). In order to detect multiple notes, we simply search for multiple large peaks that surpass a magnitude threshold. Using the labeled notes from this pipeline, we trained a CNN to output the note based on a frame of a video. The results of this approach shows that it can somewhat learn the finger positions, but is very difficult to generalize for any images that look different from the training data. An approach that might work better is to combaine an audio classification model and CNN to utilize the audio and video information, but this would require full videos to be hand-labeled, which is something we did not have time for in the semester.<br><br>
+              </p>
+              <div class="description-imgs" style="width: 40%;">
+                <div style="display: table-row">
+                  <div class="description-img">
+                    <img width="100%" src="img/hps.png" alt="programming interface PCB">
+                  </div>
+                </div>
+              </div>
+              <p class="s-description">
+                The traditional computer vision approach to this problem needs to locate the four corners of the fretboard in order to determine finger locations relative to the fretboard. I explored a neural network approach for solving this problem. This problem was difficult because of the lack of datasets available for this specific application. 
+              </p>
+            </div>
+          </div>
+        <!-- </div> -->
+        <!-- <div class="col-md-4"> -->
+          <div class="service-box">
+            <div class="service-ico">
+              <span class="ico-circle"><i class="fa fa-microphone" aria-hidden="true"></i></span>
+            </div>
+            <div class="service-content">
+              <h2 class="s-title">Speech enhancement</h2>
+              <p class="text-center"><i>Class project (2022)</i></p>
+              <p class="s-description">
+                <br>
+                This project was for an audio signal processing class. To enhance speech, we used spectral subtraction, one of the first noise suppression algorithms. It consists of estimating the average noise signal and removing noise by subtracting the average noise spectrum from the main signal’s spectrum, resulting in a restored version of the original audio. One of the side effects of this noise suppression algorithm is the generation of musical noise which is formed because the noise spectrum generally changes during speech.
               </p>
             </div>
           </div>
