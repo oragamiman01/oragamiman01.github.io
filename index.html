@@ -74,7 +74,7 @@
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
           <h1 class="intro-title mb-4">I am Preston Gonzales</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Electrical Engineer, Johns Hopkins Graduate, Programmer</span><strong class="text-slider"></strong></p>
+          <p class="intro-subtitle"><span class="text-slider-items">Electrical Engineer, Johns Hopkins Graduate, Programmer, Generative Artist</span><strong class="text-slider"></strong></p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
@@ -96,7 +96,7 @@
                     </h5>
                   </div>
                   <p class="lead">
-                    Hello! I am Preston Gonzales, an electrical engineer graduated from Johns Hopkins in 2023 and 2024 for my bachelor’s and master’s degrees, respectively. I have a wide range of experience from hardware engineering to deep learning. On this website, you will be able to see what interests me and some of the projects I have worked on in and out of school. Feel free to reach out for more info at <a href=mailto:gonzalespreston01@gmail.com target="_blank">gonzalespreston01@gmail.com</a>!
+                    Hello! I am Preston Gonzales, an electrical engineer from Idaho. I graduated from Johns Hopkins in 2023 and 2024 with my B.S. and M.S.E. in Electrical and Computer Engineering, respectively. I have a wide range of experience from hardware engineering to deep learning. On this website, you will be able to see what interests me and some of the projects I have worked on in and out of school. Feel free to reach out for more info at <a href=mailto:&#103;&#111;&#110;&#122;&#097;&#108;&#101;&#115;&#112;&#114;&#101;&#115;&#116;&#111;&#110;&#048;&#049;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109; target="_blank">&#103;&#111;&#110;&#122;&#097;&#108;&#101;&#115;&#112;&#114;&#101;&#115;&#116;&#111;&#110;&#048;&#049;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>!
                   </p>
                   <div class="title-box-2">
                     <h5 class="title-left">
@@ -214,28 +214,112 @@
               <h2 class="s-title">Computer vision guitar transcription</h2>
               <p class="text-center"><i>Class project (2023)</i></p>
               <p class="s-description">
-                In this project, my group and I utilized different techniques to transcript guitar fingering positions from a video of a guitar player. My group considered two main approaches to this problem. The first of which is a deep learning CNN-based method using labeled frames as training data. The second method is a more traditional computer vision approach, breaking up the process into smaller steps: segmentation of the fretboard, centering/tracking of the fretboard, string and fret location estimation, and finger position extraction. My main contributions to the project were the frame auto labeling pipeline for the deep CNN approach,  fretboard segmentation, and fret position calculation for the traditional approach.<br><br>
-              </p>
-              <div class="description-imgs" style="width: 50%;">
-                <div style="display: table-row">
-                  <div class="description-img">
-                    <img width="100%" src="img/guitar1.png" alt="programming interface PCB">
+                <div class="description-text">
+                  In this project, my group and I utilized different techniques to transcript guitar fingering positions from a video of a guitar player. My group considered two main approaches to this problem. The first of which is a deep learning CNN-based method using labeled frames as training data. The second method is a more traditional computer vision approach, breaking up the process into smaller steps: segmentation of the fretboard, centering/tracking of the fretboard, string and fret location estimation, and finger position extraction. My main contributions to the project were the frame auto labeling pipeline for the deep CNN approach,  fretboard segmentation, and fret position calculation for the traditional approach.<br><br>
+                </div>
+
+                <div class="description-imgs" style="width: 60%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/guitar1.png" alt="programming interface PCB">
+                    </div>
                   </div>
                 </div>
-              </div>
-              <p class="s-description">
-                <br>
-                The frame auto labeling pipeline is used in the deep learning approach so we did not have to manually label the note being played in each frame. This approach is limiting because it introduces some inaccuracy into our training data and it doesn’t allow for distinction between a D played on the 5th fret of the E string, or an open D string. However, the main advantage of this pipeline is that it allowed us to train using many more images than we would have been able to use by hand-labeling. I used my signal processing knowledge to adapt an existing project using the Harmonic Product Spectrum (HPS) as a polyphonic note detector to suit our needs. For a quick explanation, HPS uses scaled versions of the Fourier transform to find the fundamental frequency of a note that is being played. See the image below for a visual representation (<a href="http://musicweb.ucsd.edu/~trsmyth/analysis/Harmonic_Product_Spectrum.html" target="_blank">credit</a>). In order to detect multiple notes, we simply search for multiple large peaks that surpass a magnitude threshold. Using the labeled notes from this pipeline, we trained a CNN to output the note based on a frame of a video. The results of this approach shows that it can somewhat learn the finger positions, but is very difficult to generalize for any images that look different from the training data. An approach that might work better is to combaine an audio classification model and CNN to utilize the audio and video information, but this would require full videos to be hand-labeled, which is something we did not have time for in the semester.<br><br>
-              </p>
-              <div class="description-imgs" style="width: 40%;">
-                <div style="display: table-row">
-                  <div class="description-img">
-                    <img width="100%" src="img/hps.png" alt="programming interface PCB">
+                <div class="description-text">
+                  <br>
+                  The frame auto labeling pipeline is used in the deep learning approach so we did not have to manually label the note being played in each frame. This approach is limiting because it introduces some inaccuracy into our training data and it doesn’t allow for distinction between a D played on the 5th fret of the E string, or an open D string. However, the main advantage of this pipeline is that it allowed us to train using many more images than we would have been able to use by hand-labeling. I used my signal processing knowledge to adapt an existing project using the Harmonic Product Spectrum (HPS) as a polyphonic note detector to suit our needs. For a quick explanation, HPS uses scaled versions of the Fourier transform to find the fundamental frequency of a note that is being played. See the image below for a visual representation (<a href="http://musicweb.ucsd.edu/~trsmyth/analysis/Harmonic_Product_Spectrum.html" target="_blank">credit</a>). In order to detect multiple notes, we simply search for multiple large peaks that surpass a magnitude threshold. Using the labeled notes from this pipeline, we trained a CNN to output the note based on a frame of a video. The results of this approach shows that it can somewhat learn the finger positions, but is very difficult to generalize for any images that look different from the training data. An approach that might work better is to combine an audio classification model and CNN to utilize the audio and video information, but this would require full videos to be hand-labeled, which is something we did not have time for in the semester.<br><br>
+                </div>
+                <div class="description-imgs" style="width: 40%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/hps.png" alt="programming interface PCB">
+                    </div>
                   </div>
                 </div>
-              </div>
+                <div class="description-text">
+                  <br>
+                  The traditional computer vision approach to this problem needs to locate the four corners of the fretboard in order to calculate finger locations relative to the fretboard. I found a dataset on Kaggle that contained exactly the labeled images we were looking for, so I decided to attempt this segmentation using deep neural networks. The only issue was that this dataset was produced by some college students so it was very limited in size and variation. I attempted training multiple variations of CNNs and multi-layer perceptrons, plus a pre-trained semantic segmentation network from the torchvision.models library, but none of the networks had enough training data to produce consistent enough results on the test data (see example image below). This does seem like a problem that would be well suited for a CNN if there was a large and diverse dataset. I used multiple tools to try and improve the model’s performance with the data we had, such as random rotation/cropping, dropout, batch norm, edge detection, and contrast enhancement preprocessing. While some of these were able to prevent the model from obviously overfitting on the training data, the loss when applied to the test set was still too high for us to use. If I were to do this project over again, I would have just expanded the dataset by hand-labeling my own images, but I was over-confident in the capabilities of neural networks in this task. Despite the unsatisfying results from this part of the project, I recognize the lessons it taught me about creating a custom neural network for a somewhat uncommon task.<br><br>
+                </div>
+                <div class="description-imgs" style="width: 40%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/guitar2.png" alt="programming interface PCB">
+                    </div>
+                  </div>
+                </div>
+              </p>
+            </div>
+          </div>
+        <!-- </div> -->
+        <!-- <div class="col-md-4"> -->
+          <div class="service-box">
+            <div class="service-ico">
+              <span class="ico-circle"><i class="fa fa-stethoscope" aria-hidden="true"></i></span>
+            </div>
+            <div class="service-content">
+              <h2 class="s-title">Left Ventricle Segmentation and Stroke Volume Estimation</h2>
+              <p class="text-center"><i>Class project (Spring 2023)</i></p>
               <p class="s-description">
-                The traditional computer vision approach to this problem needs to locate the four corners of the fretboard in order to determine finger locations relative to the fretboard. I explored a neural network approach for solving this problem. This problem was difficult because of the lack of datasets available for this specific application. 
+                <div class="description-text">
+                  In this project for my medical image analysis class, I worked with a partner to create a 3D reconstruction of the left ventricle of the heart from ultrasound sequences. This allows for us to estimate the stroke volume and ejection fraction of the heart, which are measures of heart health. The data we were given to work with was a set of 2- and 4-chamber view cardiac ultrasound sequences. These two views are assumed to be orthogonal to each other.<br><br>
+                </div>
+                <div class="description-imgs" style="width: 40%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/mia1.png" alt="programming interface PCB">
+                    </div>
+                  </div>
+                </div>
+                <div class="description-text">
+                  <br>
+                  The first step in this project is to segment (find the outline of) the left ventricle. Segmenting the images is the crux of this project because the accuracy of the 3D representation depends entirely on the segmentation accuracy. Other papers used deep learning to segment the ventricle, but we were more interested in using the image analysis techniques we had learned in class. Using a traditional approach to this segmentation problem proved to be extremely difficult because of the poor quality of ultrasound images. We used a variety of techniques to normalize, denoise, and threshold the images, but our results certainly fell short of other groups that used a deep learning approach. Over the entire dataset, our segmentation technique produced a Dice score of 0.6, where a score of 1 corresponds to perfect segmentation.<br><br>
+                </div>
+                <div class="description-imgs" style="width: 40%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/mia2.png" alt="programming interface PCB">
+                    </div>
+                  </div>
+                </div>
+                <div class="description-text">
+                  <br>
+                  Due to the nature of this hand-crafted algorithm, the hardest part was obtaining consistent results across all the images in the dataset. As you can see in the example below, some images produce very solid results, whereas others are very poor. Despite this algorithm not performing as well as we had hoped, it was a great challenge for us to apply the techniques we learned in the class.<br><br>
+                </div>
+                <div class="description-imgs" style="width: 60%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/mia3.png" alt="programming interface PCB">
+                    </div>
+                  </div>
+                </div>
+                <div class="description-text">
+                  <br>
+                  For creating the 3D representation, we leveraged the assumption that the 2- and 4-chamber views are orthogonal to each other. This allows us to essentially interpolate from one set of points to the other set of points to generate points on intermediate angles. See the images below for a visual representation of the algorithm and result.<br><br>
+                </div>
+                <div class="description-imgs" style="width: 60%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/mia4.png" alt="programming interface PCB">
+                    </div>
+                    <div class="description-img">
+                      <img width="100%" src="img/mia5.png" alt="programming interface PCB">
+                    </div>
+                  </div>
+                </div>
+                <div class="description-text">
+                  <br>
+                  The last part of this project is estimating the stroke volume and ejection fraction for each ultrasound sequence. It was simple to calculate the volume using our 3D surface, but we then had to convert it to mL. Upon plotting our pixel volumes vs physical ground truth volumes, we were able to see that our estimated volumes were not linearly correlated with the physical volumes. Thus, we used an exponential regression to scale our pixel volumes to the physical volumes. See the table below for the average difference and standard deviation over the entire dataset. These results surprised us in how close they were to the ground truth. I would attribute this to the exponential regression correcting the skew produced in our model.<br><br>
+                </div>
+                <div class="description-imgs" style="width: 40%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/mia7.png" alt="programming interface PCB">
+                    </div>
+                  </div>
+                </div>
+                <div class="description-text">
+                  Despite the lackluster results of our algorithm in the segmentation task of this project, I was pleased that we still created an end-to-end algorithm for a useful measure of heart health that’s based off of an uninvasive ultrasound. This project challenged me to be creative, not only in the image processing methods but also creating a 3D model from two 2D images.
+                </div>
               </p>
             </div>
           </div>
@@ -250,7 +334,7 @@
               <p class="text-center"><i>Class project (2022)</i></p>
               <p class="s-description">
                 <br>
-                This project was for an audio signal processing class. To enhance speech, we used spectral subtraction, one of the first noise suppression algorithms. It consists of estimating the average noise signal and removing noise by subtracting the average noise spectrum from the main signal’s spectrum, resulting in a restored version of the original audio. One of the side effects of this noise suppression algorithm is the generation of musical noise which is formed because the noise spectrum generally changes during speech.
+                This project was for an audio signal processing class. To enhance speech, we used spectral subtraction, one of the first noise suppression algorithms. It consists of estimating the average noise signal and removing noise by subtracting the average noise spectrum from the main signal’s spectrum, resulting in a restored version of the original audio. One of the side effects of this noise suppression algorithm is the generation of musical noise which is formed because the noise spectrum generally changes during speech.<br><br>
               </p>
             </div>
           </div>
@@ -262,23 +346,9 @@
             </div>
             <div class="service-content">
               <h2 class="s-title">DTMF Dial Pad Encoding and decoding</h2>
-              <p class="text-center"><i>Class project (2021)</i></p>
+              <p class="text-center"><i>Class project (Fall 2021)</i></p>
               <p class="s-description">
                 This project was for my Signals and Systems class. It gave me an introduction into the elegance and power of signal processing. The goal of this project was to code a dual-tone multi-frequency dial pad encoder and decoder in Matlab. Using a combination of filtering and simple Fourier domain analysis, the digits from a 10-digit phone number can be decoded from a noisy audio signal. I enjoyed this class because it taught me how to think about signals in an applicable way.
-              </p>
-            </div>
-          </div>
-        <!-- </div> -->
-        <!-- <div class="col-md-4"> -->
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="fa fa-stethoscope" aria-hidden="true"></i></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Medical imaging estimation</h2>
-              <p class="text-center"><i>Class project (2021)</i></p>
-              <p class="s-description">
-                In this project for a medical image analysis class, I designed an algorithm for left ventricle segmentation and stroke volume estimation from ultrasound sequence. The point of this project was to use a sequence of ultrasound images of the heart from two orthogonal views to identify the left ventricle and estimate the volume of blood pumped over one cycle of the heart. My partner and I at the time were not extremely familiar with deep learning methods, so we attempted to solve this problem through traditional image processing methods we learned in the class. This method proved to be less capable than deep learning segmentation techniques, but the process of designing an algorithm from scratch was a valuable learning experience to me.
               </p>
             </div>
           </div>

@@ -703,6 +703,10 @@ a:hover {
   background-color: #24b67e;
 }
 
+.about-me {
+  padding: 10px;
+}
+
 /*======================================
 //--//-->   SERVICES
 ======================================*/
@@ -741,6 +745,11 @@ a:hover {
 .service-box .s-description {
   color: #4e4e4e;
   display: table-row;
+}
+
+.service-box .description-text {
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 
