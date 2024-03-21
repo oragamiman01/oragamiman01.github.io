@@ -107,7 +107,7 @@
                     <strong>From: </strong>Kimberly, Idaho<br>
                     <strong>Alma mater: </strong>Johns Hopkins University<br>
                     <!-- <strong>Passions: </strong>Working with numbers <br> -->
-                    <strong>Hobbies: </strong>Penplotting, rock climbing, snowboarding, and other outdoors activities! <br>
+                    <strong>Hobbies: </strong>Penplotting, rock climbing, snowboarding, and other outdoors activities!
                   </p>
                 </div>
             </div>
@@ -178,7 +178,7 @@
               <p class="text-center"><i>Senior Design and Graduate Independent Study Project</i></p>
               <p class="s-description">
                 <div class="description-text">
-                  This is a project that I first got involved with in my senior year. The main idea around the project is to create a sort of swarm protocol that allows for an undetermined number of devices to wake up and self-coordinate to perform individual actions unique to each device. In this case, the goal of the project was to create singing boxes that would each play a different part of the song to create a chorus effect. The project had been started by a previous group of students, but they had only achieved basic radio communication between two devices with predetermined states. I worked on this project by myself during Fall 2022 and with a partner in Spring 2023. Currently, I am leading a team of two undergraduate students to continue working on the project. Over the 2023-24 academic year, we were able to implement the protocol we created on Arduino Unos. See <a href="https://www.youtube.com/watch?v=3C2i4HhF9nc" target="blank">here</a> for a basic video of the demonstration and below for the project poster from Spring 2023.<br><br>
+                  This is a project that I first got involved with in my senior year. The main idea around the project is to create a sort of swarm protocol that allows for an undetermined number of devices to wake up and self-coordinate to perform individual actions unique to each device. In this case, the goal of the project was to create singing boxes that would each play a different part of the song to create a chorus effect. The project had been started by a previous group of students, but they had only achieved basic radio communication between two devices with predetermined states. I worked on this project by myself during Fall 2022 and with a partner in Spring 2023. Currently, I am leading a team of two undergraduate students to continue working on the project. Over the 2023-24 academic year, we were able to implement the protocol we created on Arduino Unos. See <u><a href="https://www.youtube.com/watch?v=3C2i4HhF9nc" target="blank">here</a></u> for a  video of the demonstration and below for the project poster from Spring 2023.<br><br>
                 </div>
                 <div class="description-imgs" style="width: 80%;">
                   <div style="display: table-row">
@@ -227,7 +227,7 @@
                 </div>
                 <div class="description-text">
                   <br>
-                  The frame auto labeling pipeline is used in the deep learning approach so we did not have to manually label the note being played in each frame. This approach is limiting because it introduces some inaccuracy into our training data and it doesn’t allow for distinction between a D played on the 5th fret of the E string, or an open D string. However, the main advantage of this pipeline is that it allowed us to train using many more images than we would have been able to use by hand-labeling. I used my signal processing knowledge to adapt an existing project using the Harmonic Product Spectrum (HPS) as a polyphonic note detector to suit our needs. For a quick explanation, HPS uses scaled versions of the Fourier transform to find the fundamental frequency of a note that is being played. See the image below for a visual representation (<a href="http://musicweb.ucsd.edu/~trsmyth/analysis/Harmonic_Product_Spectrum.html" target="_blank">credit</a>). In order to detect multiple notes, we simply search for multiple large peaks that surpass a magnitude threshold. Using the labeled notes from this pipeline, we trained a CNN to output the note based on a frame of a video. The results of this approach shows that it can somewhat learn the finger positions, but is very difficult to generalize for any images that look different from the training data. An approach that might work better is to combine an audio classification model and CNN to utilize the audio and video information, but this would require full videos to be hand-labeled, which is something we did not have time for in the semester.<br><br>
+                  The frame auto labeling pipeline is used in the deep learning approach so we did not have to manually label the note being played in each frame. This approach is limiting because it introduces some inaccuracy into our training data and it doesn’t allow for distinction between a D played on the 5th fret of the E string, or an open D string. However, the main advantage of this pipeline is that it allowed us to train using many more images than we would have been able to use by hand-labeling. I used my signal processing knowledge to adapt an existing project using the Harmonic Product Spectrum (HPS) as a polyphonic note detector to suit our needs. For a quick explanation, HPS uses scaled versions of the Fourier transform to find the fundamental frequency of a note that is being played. See the image below for a visual representation (<u><a href="http://musicweb.ucsd.edu/~trsmyth/analysis/Harmonic_Product_Spectrum.html" target="_blank">credit</a></u>). In order to detect multiple notes, we simply search for multiple large peaks that surpass a magnitude threshold. Using the labeled notes from this pipeline, we trained a CNN to output the note based on a frame of a video. The results of this approach shows that it can somewhat learn the finger positions, but is very difficult to generalize for any images that look different from the training data. An approach that might work better is to combine an audio classification model and CNN to utilize the audio and video information, but this would require full videos to be hand-labeled, which is something we did not have time for in the semester.<br><br>
                 </div>
                 <div class="description-imgs" style="width: 40%;">
                   <div style="display: table-row">
@@ -330,32 +330,52 @@
               <span class="ico-circle"><i class="fa fa-microphone" aria-hidden="true"></i></span>
             </div>
             <div class="service-content">
-              <h2 class="s-title">Speech enhancement</h2>
-              <p class="text-center"><i>Class project (2022)</i></p>
+              <h2 class="s-title">Speech Enhancement</h2>
+              <p class="text-center"><i>Class project (Fall 2022)</i></p>
               <p class="s-description">
                 <div class="description-text">
                   <br>
-                  This project was for an audio signal processing class. To enhance speech, we used spectral subtraction, one of the first noise suppression algorithms. It consists of estimating the average noise signal and removing noise by subtracting the average noise spectrum from the main signal’s spectrum, resulting in a restored version of the original audio. One of the side effects of this noise suppression algorithm is the generation of musical noise which is formed because the noise spectrum generally changes during speech.<br><br>
-              </div>
+                  This project is from my Audio Signal Processing class, where the goal to implement a basic speech enhancement algorithm using spectral subtraction. Spectral subtraction is an algorithm where an estimate of noise is subtracted from speech signals in an ettempt to reduce background noise. In order to accomplish this, the audio clip is first windowed using a windowing function (e.g. Hamming window) and split into partially overlapping frames, where each frame is generally ~20ms long. This algorithm assumes that the first frame of audio has no active speech, meaning that the first frame of the audio signal is the first noise estimate. For subsequent frames, voice activity is detected using a voice activity detector (VAD). The VAD works by calculating the spectral difference between the noise estimate and current frame, and if the difference surpasses a specific threshold, then the current frame is determined to be voiced. If a chosen frame is not voiced, then the spectrum of the frame is averaged with the noise estimate to update the noise estimate. If a chosen frame is voiced, then the spectrum of the noise estimate is subtracted from the frame. See the spectrograms below to see how the algorithm affects a noisy speech signal.
+                  <br><br>
+                </div>
+                <div class="description-imgs" style="width: 80%;">
+                  <div style="display: table-row">
+                    <div class="description-img">
+                      <img width="100%" src="img/asp1.png" alt="clean signal spectrogram">
+                    </div>
+                    <div class="description-img">
+                      <img width="100%" src="img/asp4.png" alt="noisy signal spectrogram">
+                    </div>
+                    <div class="description-img">
+                      <img width="100%" src="img/asp3.png" alt="denoised signal spectrogram">
+                    </div>
+                  </div>
+                </div>
+                <div class="description-text">
+                  <br>
+                  In the above spectrograms, you can see that the speech is visibly less clear with noise added than the original signal. After performing spectral subtraction, the speech is obviously much clearer and there is much less noise even when there is no speech. One of the shortcomings of this algorithm is that the real noise is not always accurately depicted by the noise estimate. This can leave residual noise in the signal or it can remove some of the actual speech signal, as can be seen in the area outlined by the red box above. Residual noise will often have isolated peaks that produce an audible artifact called "musical noise". We found that there are some ways to try and remove musical noise, but we didn't have time to implement those.
+                  <br><br>
+                  Doing this project gave me a solid understanding of the Short-Time Fourier Transform and an idea for how difficult it is to denoise audio signals. As is the case with many hand-made algorithms that I have experimented with in my projects, I found that it is difficult to make something that performs consistently across varying types and magnitudes of noise. Looking back on this project, I would be very interested in using deep learning to solve this problem as well and see how it compares. 
+                </div>
               </p>
             </div>
           </div>
         <!-- </div> -->
         <!-- <div class="col-md-4"> -->
-          <div class="service-box">
+          <!-- <div class="service-box">
             <div class="service-ico">
               <span class="ico-circle"><i class="fa fa-keyboard-o" aria-hidden="true"></i></span>
             </div>
             <div class="service-content">
               <h2 class="s-title">DTMF Dial Pad Encoding and decoding</h2>
-              <p class="text-center"><i>Class project (Fall 2021)</i></p>
+              <p class="text-center"><i>Class project (Spring 2021)</i></p>
               <p class="s-description">
                 <div class="description-text">
                   This project was for my Signals and Systems class. It gave me an introduction into the elegance and power of signal processing. The goal of this project was to code a dual-tone multi-frequency dial pad encoder and decoder in Matlab. Using a combination of filtering and simple Fourier domain analysis, the digits from a 10-digit phone number can be decoded from a noisy audio signal. I enjoyed this class because it taught me how to think about signals in an applicable way.
                 </div>
               </p>
             </div>
-          </div>
+          </div> -->
         <!-- </div> -->
       </div>
     </div>
