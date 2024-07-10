@@ -711,6 +711,33 @@ a:hover {
 //--//-->   SERVICES
 ======================================*/
 
+.collapsible {
+  position: sticky;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #fff;
+  /* color: white; */
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  outline: none;
+  /* width: 100%; */
+}
+
+.content {
+  width: 100%;
+  /* padding: 0 18px; */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  /* background-color: #f1f1f1; */
+}
+
+button:focus {
+  outline: none;
+}
+
 .service-box {
   background-color: #fff;
   padding: 2.5rem 1.3rem;
@@ -718,7 +745,7 @@ a:hover {
   margin-bottom: 3rem;
 }
 
-.service-box:hover .ico-circle {
+.ico-circle:hover {
   transition: all 500ms ease;
   color: #fff;
   background-color: #24b67e;
